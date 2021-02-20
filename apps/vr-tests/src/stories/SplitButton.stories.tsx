@@ -3,14 +3,14 @@ import Screener, { Steps } from 'screener-storybook/src/screener';
 import { storiesOf } from '@storybook/react';
 import { SplitButton } from '@fluentui/react-button';
 import { AddIcon } from '@fluentui/react-icons-mdl2';
-import { ThemeProvider } from '@fluentui/react';
+import { ThemeProvider } from '@fluentui/react-theme-provider/lib/compat/index';
 import { TeamsTheme } from '@fluentui/storybook/lib/themes/v8/index';
-import { withThemeProvider } from '@fluentui/storybook';
+import { withCompatThemeProvider } from '@fluentui/storybook';
 import { FabricDecorator, FabricDecoratorFullWidth } from '../utilities/index';
 
 storiesOf('SplitButton', module)
   .addDecorator(FabricDecorator)
-  .addDecorator(withThemeProvider)
+  .addDecorator(withCompatThemeProvider)
   .addDecorator(story => (
     <Screener
       steps={new Steps()
@@ -78,7 +78,7 @@ storiesOf('SplitButton', module)
 
 storiesOf('SplitButton Next - Block', module)
   .addDecorator(FabricDecoratorFullWidth)
-  .addDecorator(withThemeProvider)
+  .addDecorator(withCompatThemeProvider)
   .addDecorator(story => (
     <Screener
       steps={new Steps()
@@ -121,13 +121,13 @@ storiesOf('SplitButton Next - Block', module)
       Hello, world
     </SplitButton>
   ))
-  .addStory('Ghost', () => (
-    <SplitButton block ghost icon="X">
+  .addStory('Subtle', () => (
+    <SplitButton block subtle icon="X">
       Hello, world
     </SplitButton>
   ))
-  .addStory('Ghost Disabled', () => (
-    <SplitButton block disabled ghost icon="X">
+  .addStory('Subtle Disabled', () => (
+    <SplitButton block disabled subtle icon="X">
       Hello, world
     </SplitButton>
   ))
@@ -144,7 +144,7 @@ storiesOf('SplitButton Next - Block', module)
 
 storiesOf('SplitButton Next - Teams Theme', module)
   .addDecorator(FabricDecorator)
-  .addDecorator(withThemeProvider({ theme: TeamsTheme }))
+  .addDecorator(withCompatThemeProvider({ theme: TeamsTheme }))
   .addDecorator(story => (
     <Screener
       steps={new Steps()

@@ -4,12 +4,12 @@ import { storiesOf } from '@storybook/react';
 import { MenuButton } from '@fluentui/react-button';
 import { AddIcon } from '@fluentui/react-icons-mdl2';
 import { TeamsTheme } from '@fluentui/storybook/lib/themes/v8/index';
-import { withThemeProvider } from '@fluentui/storybook';
+import { withCompatThemeProvider } from '@fluentui/storybook';
 import { FabricDecorator, FabricDecoratorFullWidth } from '../utilities/index';
 
 storiesOf('MenuButton', module)
   .addDecorator(FabricDecorator)
-  .addDecorator(withThemeProvider)
+  .addDecorator(withCompatThemeProvider)
   .addDecorator(story => (
     <Screener
       steps={new Steps()
@@ -40,11 +40,7 @@ storiesOf('MenuButton', module)
     </MenuButton>
   ))
   .addStory('With icon before content', () => <MenuButton icon="X">Hello, world</MenuButton>)
-  .addStory('With icon after content', () => (
-    <MenuButton icon="X" iconPosition="after">
-      Hello, world
-    </MenuButton>
-  ))
+  .addStory('With icon after content', () => <MenuButton icon="X">Hello, world</MenuButton>)
   .addStory('Circular', () => (
     <MenuButton circular icon="X">
       Hello, world
@@ -71,7 +67,7 @@ storiesOf('MenuButton', module)
 
 storiesOf('MenuButton Next - Block', module)
   .addDecorator(FabricDecoratorFullWidth)
-  .addDecorator(withThemeProvider)
+  .addDecorator(withCompatThemeProvider)
   .addDecorator(story => (
     <Screener
       steps={new Steps()
@@ -114,13 +110,13 @@ storiesOf('MenuButton Next - Block', module)
       Hello, world
     </MenuButton>
   ))
-  .addStory('Ghost', () => (
-    <MenuButton block ghost icon="X">
+  .addStory('Subtle', () => (
+    <MenuButton block subtle icon="X">
       Hello, world
     </MenuButton>
   ))
-  .addStory('Ghost Disabled', () => (
-    <MenuButton block disabled ghost icon="X">
+  .addStory('Subtle Disabled', () => (
+    <MenuButton block disabled subtle icon="X">
       Hello, world
     </MenuButton>
   ))
@@ -137,7 +133,7 @@ storiesOf('MenuButton Next - Block', module)
 
 storiesOf('MenuButton Next - Teams Theme', module)
   .addDecorator(FabricDecorator)
-  .addDecorator(withThemeProvider({ theme: TeamsTheme }))
+  .addDecorator(withCompatThemeProvider({ theme: TeamsTheme }))
   .addDecorator(story => (
     <Screener
       steps={new Steps()
@@ -168,11 +164,7 @@ storiesOf('MenuButton Next - Teams Theme', module)
     </MenuButton>
   ))
   .addStory('With icon before content', () => <MenuButton icon="X">Hello, world</MenuButton>)
-  .addStory('With icon after content', () => (
-    <MenuButton icon="X" iconPosition="after">
-      Hello, world
-    </MenuButton>
-  ))
+  .addStory('With icon after content', () => <MenuButton icon="X">Hello, world</MenuButton>)
   .addStory('Circular', () => (
     <MenuButton circular icon="X">
       Hello, world

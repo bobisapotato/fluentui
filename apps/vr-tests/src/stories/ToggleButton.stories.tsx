@@ -4,12 +4,12 @@ import { storiesOf } from '@storybook/react';
 import { ToggleButton } from '@fluentui/react-button';
 import { AddIcon } from '@fluentui/react-icons-mdl2';
 import { TeamsTheme } from '@fluentui/storybook/lib/themes/v8/index';
-import { withThemeProvider } from '@fluentui/storybook';
+import { withCompatThemeProvider } from '@fluentui/storybook';
 import { FabricDecorator, FabricDecoratorFullWidth } from '../utilities/index';
 
 storiesOf('ToggleButton', module)
   .addDecorator(FabricDecorator)
-  .addDecorator(withThemeProvider)
+  .addDecorator(withCompatThemeProvider)
   .addDecorator(story => (
     <Screener
       steps={new Steps()
@@ -75,7 +75,7 @@ storiesOf('ToggleButton', module)
 
 storiesOf('ToggleButton Next - Block', module)
   .addDecorator(FabricDecoratorFullWidth)
-  .addDecorator(withThemeProvider)
+  .addDecorator(withCompatThemeProvider)
   .addDecorator(story => (
     <Screener
       steps={new Steps()
@@ -121,13 +121,13 @@ storiesOf('ToggleButton Next - Block', module)
       Hello, world
     </ToggleButton>
   ))
-  .addStory('Ghost', () => (
-    <ToggleButton block ghost icon="X">
+  .addStory('Subtle', () => (
+    <ToggleButton block subtle icon="X">
       Hello, world
     </ToggleButton>
   ))
-  .addStory('Ghost Disabled', () => (
-    <ToggleButton block disabled ghost icon="X">
+  .addStory('Subtle Disabled', () => (
+    <ToggleButton block disabled subtle icon="X">
       Hello, world
     </ToggleButton>
   ))
@@ -144,7 +144,7 @@ storiesOf('ToggleButton Next - Block', module)
 
 storiesOf('ToggleButton Next - Teams Theme', module)
   .addDecorator(FabricDecorator)
-  .addDecorator(withThemeProvider({ theme: TeamsTheme }))
+  .addDecorator(withCompatThemeProvider({ theme: TeamsTheme }))
   .addDecorator(story => (
     <Screener
       steps={new Steps()

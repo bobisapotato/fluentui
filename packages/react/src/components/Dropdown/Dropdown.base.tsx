@@ -20,7 +20,7 @@ import {
   warnMutuallyExclusive,
 } from '../../Utilities';
 import { Callout, DirectionalHint } from '../../Callout';
-import { CommandButton } from '../../compat/Button';
+import { CommandButton } from '../../Button';
 import {
   DropdownMenuItemType,
   IDropdownOption,
@@ -36,10 +36,7 @@ import { Icon } from '../../Icon';
 import { ILabelStyleProps, ILabelStyles, Label } from '../../Label';
 import { IProcessedStyleSet } from '../../Styling';
 import { Panel, IPanelStyleProps, IPanelStyles } from '../../Panel';
-import {
-  ResponsiveMode,
-  IWithResponsiveModeState,
-} from '@fluentui/react-internal/lib/utilities/decorators/withResponsiveMode';
+import { ResponsiveMode, IWithResponsiveModeState, useResponsiveMode } from '../../ResponsiveMode';
 import {
   SelectableOptionMenuItemType,
   getAllSelectedOptions,
@@ -48,13 +45,13 @@ import {
 // import and use V7 Checkbox to ensure no breaking changes.
 import { Checkbox, ICheckboxStyleProps, ICheckboxStyles } from '../../Checkbox';
 import { getPropsWithDefaults } from '@fluentui/utilities';
-import { useResponsiveMode } from '@fluentui/react-internal/lib/utilities/hooks/useResponsiveMode';
 import { useMergedRefs, usePrevious } from '@fluentui/react-hooks';
 
 const COMPONENT_NAME = 'Dropdown';
 const getClassNames = classNamesFunction<IDropdownStyleProps, IDropdownStyles>();
 
 /** Internal only props interface to support mixing in responsive mode */
+// eslint-disable-next-line deprecation/deprecation
 interface IDropdownInternalProps extends Omit<IDropdownProps, 'ref'>, IWithResponsiveModeState {
   hoisted: {
     rootRef: React.Ref<HTMLDivElement>;

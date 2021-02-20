@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { makeVariantClasses, Theme } from '@fluentui/react-theme-provider';
+import { makeVariantClasses, Theme } from '@fluentui/react-theme-provider/lib/compat/index';
 import { EdgeChromiumHighContrastSelector } from '@fluentui/style-utilities';
 import { ButtonState, ButtonVariants } from './Button.types';
 
@@ -391,7 +391,7 @@ export const useButtonClasses = makeVariantClasses<ButtonState, ButtonVariants>(
       },
 
       // TODO: no references to palette.
-      ghost: {
+      subtle: {
         background: 'transparent',
         borderColor: 'transparent',
         contentColor: palette?.neutralPrimary,
